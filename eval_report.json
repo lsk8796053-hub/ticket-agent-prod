@@ -1,0 +1,191 @@
+{
+  "evaluated_at": "2026-11-20 05:07:53",
+  "total_cases": 10,
+  "passed_cases": 10,
+  "pass_rate_pct": 100.0,
+  "route_accuracy_pct": 100.0,
+  "tool_accuracy_pct": 100.0,
+  "avg_latency_ms": 7366,
+  "p95_latency_ms": 12289,
+  "total_cost_cny": 1.654367,
+  "all_strong_baseline_cost_cny": 2.00691,
+  "routing_cost_saved_pct": 17.6,
+  "gate_passed": true,
+  "details": [
+    {
+      "id": "E01",
+      "name": "简单查单-走便宜模型",
+      "passed": true,
+      "route_ok": true,
+      "tool_ok": true,
+      "content_ok": true,
+      "actual_tier": "便宜模型",
+      "actual_tools": [
+        "get_order"
+      ],
+      "latency_ms": 5284,
+      "cost": 0.010068,
+      "all_strong_cost": 0.15219,
+      "fail_reasons": [],
+      "run_id": "RUN-5D09F164"
+    },
+    {
+      "id": "E02",
+      "name": "查询不存在订单-不编造",
+      "passed": true,
+      "route_ok": true,
+      "tool_ok": true,
+      "content_ok": true,
+      "actual_tier": "便宜模型",
+      "actual_tools": [
+        "get_order"
+      ],
+      "latency_ms": 4609,
+      "cost": 0.009942,
+      "all_strong_cost": 0.149745,
+      "fail_reasons": [],
+      "run_id": "RUN-466FCB9B"
+    },
+    {
+      "id": "E03",
+      "name": "常规咨询-不乱调工具",
+      "passed": true,
+      "route_ok": true,
+      "tool_ok": true,
+      "content_ok": true,
+      "actual_tier": "便宜模型",
+      "actual_tools": [],
+      "latency_ms": 3172,
+      "cost": 0.004997,
+      "all_strong_cost": 0.075615,
+      "fail_reasons": [],
+      "run_id": "RUN-E4B61B15"
+    },
+    {
+      "id": "E04",
+      "name": "待服务订单正常取消",
+      "passed": true,
+      "route_ok": true,
+      "tool_ok": true,
+      "content_ok": true,
+      "actual_tier": "强模型",
+      "actual_tools": [
+        "get_order",
+        "cancel_order"
+      ],
+      "latency_ms": 10140,
+      "cost": 0.22881,
+      "all_strong_cost": 0.22881,
+      "fail_reasons": [],
+      "run_id": "RUN-F79A5F46"
+    },
+    {
+      "id": "E05",
+      "name": "已完成订单投诉-转人工工单",
+      "passed": true,
+      "route_ok": true,
+      "tool_ok": true,
+      "content_ok": true,
+      "actual_tier": "强模型",
+      "actual_tools": [
+        "get_order",
+        "create_ticket"
+      ],
+      "latency_ms": 8762,
+      "cost": 0.234615,
+      "all_strong_cost": 0.234615,
+      "fail_reasons": [],
+      "run_id": "RUN-D713D791"
+    },
+    {
+      "id": "E06",
+      "name": "已取消订单防重复取消",
+      "passed": true,
+      "route_ok": true,
+      "tool_ok": true,
+      "content_ok": true,
+      "actual_tier": "强模型",
+      "actual_tools": [
+        "get_order"
+      ],
+      "latency_ms": 5461,
+      "cost": 0.150885,
+      "all_strong_cost": 0.150885,
+      "fail_reasons": [],
+      "run_id": "RUN-BA9476E8"
+    },
+    {
+      "id": "E07",
+      "name": "自然语言正常改期",
+      "passed": true,
+      "route_ok": true,
+      "tool_ok": true,
+      "content_ok": true,
+      "actual_tier": "强模型",
+      "actual_tools": [
+        "get_order",
+        "reschedule_order"
+      ],
+      "latency_ms": 7371,
+      "cost": 0.22908,
+      "all_strong_cost": 0.22908,
+      "fail_reasons": [],
+      "run_id": "RUN-1F659481"
+    },
+    {
+      "id": "E08",
+      "name": "2小时内改期并要求转人工",
+      "passed": true,
+      "route_ok": true,
+      "tool_ok": true,
+      "content_ok": true,
+      "actual_tier": "强模型",
+      "actual_tools": [
+        "get_order",
+        "reschedule_order",
+        "create_ticket"
+      ],
+      "latency_ms": 12289,
+      "cost": 0.3171,
+      "all_strong_cost": 0.3171,
+      "fail_reasons": [],
+      "run_id": "RUN-7B70DDAF"
+    },
+    {
+      "id": "E09",
+      "name": "2小时内改期-规则拦截提示",
+      "passed": true,
+      "route_ok": true,
+      "tool_ok": true,
+      "content_ok": true,
+      "actual_tier": "强模型",
+      "actual_tools": [
+        "get_order",
+        "reschedule_order",
+        "create_ticket"
+      ],
+      "latency_ms": 11666,
+      "cost": 0.31575,
+      "all_strong_cost": 0.31575,
+      "fail_reasons": [],
+      "run_id": "RUN-B9DAB3FC"
+    },
+    {
+      "id": "E10",
+      "name": "无订单号纯投诉-创建工单",
+      "passed": true,
+      "route_ok": true,
+      "tool_ok": true,
+      "content_ok": true,
+      "actual_tier": "强模型",
+      "actual_tools": [
+        "create_ticket"
+      ],
+      "latency_ms": 4913,
+      "cost": 0.15312,
+      "all_strong_cost": 0.15312,
+      "fail_reasons": [],
+      "run_id": "RUN-E53F4024"
+    }
+  ]
+}

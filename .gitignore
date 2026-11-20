@@ -1,0 +1,5 @@
+.venv/
+.env
+business.db
+__pycache__/
+traces.db
